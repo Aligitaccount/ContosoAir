@@ -34,7 +34,7 @@ steps:
     subscriptionId: 'ae8b1011-202e-4a18-a481-39b0331a64bb'
     action: 'Create Or Update Resource Group'
     resourceGroupName: 'rg-lod'
-    location: 'East US 2'
+    location: 'East US'
     templateLocation: 'Linked artifact'
     csmFile: '$(Pipeline.Workspace)/drop/Templates/azuredeploy.json'
     csmParametersFile: '$(Pipeline.Workspace)/drop/Templates/azuredeploy.parameters.json'
@@ -43,7 +43,7 @@ steps:
 - task: AzureRmWebAppDeployment@5
   inputs:
     ConnectionType: 'AzureRM'
-    azureSubscription: 'MIPDG--lod51073864(ae8b1011-202e-4a18-a481-39b0331a64bb)'
+    azureSubscription: 'Azure Connection'
     appType: 'webApp'
     WebAppName: '$(web_prefix)-$(web_site)-$(web_environment)'
     packageForLinux: '$(Pipeline.Workspace)/**/*.zip'
