@@ -43,14 +43,7 @@ steps:
 - task: AzureRmWebAppDeployment@5
   inputs:
     ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure Connection'
+    azureSubscription: 'MIPDG--lod51073864(ae8b1011-202e-4a18-a481-39b0331a64bb)'
     appType: 'webApp'
     WebAppName: '$(web_prefix)-$(web_site)-$(web_environment)'
     packageForLinux: '$(Pipeline.Workspace)/**/*.zip'
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
